@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form (ngSubmit)="onSubmit()">
+        First Name: <input type="text" [(ngModel)]="data.fname" name="fname"/><br/><br>
+        Last Name:<input type="text" [(ngModel)]="data.lname" name="lname"/> <br><br>
+        Email:<input type="text" [(ngModel)]="data.email" name="email"/> <br><br>
+        Phone No:<input type="text" [(ngModel)]="data.phone" name="phone"/> <br><br>
+        <input type="submit" value="Submit"/>
+    </form>
+    <div *ngIf="submit">
+        <p>First Name:{{data.fname}}</p>
+        <p>Last Name:{{data.lname}}</p>
+       <p>Email:{{data.email}}</p>
+        <p>Phone No:{{data.phone}}</p>
+    </div>
+</body>
+</html>

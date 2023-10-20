@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post" action="/insert" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        Prd Namme:<input type="text" [(ngModel)]="prdData.pname" name="pname"/> <br><br>
+        Category:<select [(ngModel)]="prdData.cname" name="cname">
+            <option>Select Category</option>
+            <option *ngFor="let c of category" >{{c.CatName}}</option>
+        </select><br><br>
+        Price:<input type="number" [(ngModel)]="prdData.price" name="price"/> <br><br>
+        Qnty:<input type="number" [(ngModel)]="prdData.qtny" name="qtny"/> <br><br>
+        Image:<input type="file" [(ngModel)]="prdData.image" name="image" (change)="onFileSelect($event)"/> <br><br>
+        <input type="submit" value="Insert">
+    </form><br><br>
+    
+      <h1>Products</h1>
+      
+  
+      <table>
+        <tr>
+          <th>ProductName</th>
+          <th>CategoryName</th>
+          <th>Price</th>
+          
+          <!-- Add more table headers as needed -->
+        </tr>
+        <tr *ngFor="let item of data">
+          <td>{{ item.PrdName }}</td>
+          <td>{{ item.Category }}</td>
+          <td>{{ item.Price }}</td>
+          <!-- <td>{{ item.Qnty }}</td> -->
+          <td><img src="../../assets/public/imgs/{{item.Photo}}" height="50px" width="50px"></td>
+          <td><a [routerLink]="['/edit', item._id]">Edit</a></td>
+          <td><a href="/delete/{{item._id}}" (click)="OnDelete()">Delete</a></td>
+          <!-- <td>{{ item.pname }}</td> -->
+          <!-- Display other data fields as needed -->
+        </tr>
+      </table>
+     
+  
+</body>
+</html>
+
+

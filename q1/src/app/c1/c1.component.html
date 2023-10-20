@@ -1,0 +1,22 @@
+<p>Value in Integer: <b>{{n1}}</b></p>
+<p>Value in String: <b>{{s1}}</b></p>
+<p>Value in Date: <b>{{date1}}</b></p>
+Display Array
+<ul>
+  <li *ngFor="let a of array1">{{a}}</li>
+</ul>
+Display in ComboBox
+<select>
+  <option *ngFor="let a of array1">{{a}}</option>
+</select>
+<br><br>
+Enter Input Type
+<select id="selection" [(ngModel)]="selection" (change)="onChange()">
+  <option *ngFor="let a of array2">{{a}}</option>
+</select>
+<div *ngIf="selection==='textbox'">
+  <input type="text" [(ngModel)]="textbox"/>
+</div>
+<div *ngIf="selection==='textArea'">
+  <textarea [(ngModel)]="textArea" rows="5" cols="5"></textarea>
+</div>

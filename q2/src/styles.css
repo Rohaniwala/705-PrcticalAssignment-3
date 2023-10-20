@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: bisque;
+}
+table,tr,th,td
+      {
+        border: 2px solid black;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+      }

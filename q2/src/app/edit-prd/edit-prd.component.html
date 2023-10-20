@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post" action="/edit/:id" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div *ngIf="formdata">
+        Prd Namme:<input type="text" name="pname" [(ngModel)]="prdData.pname" value="{{formdata.PrdName}}"/> <br><br>
+        Category:<select  name="cname" [(ngModel)]="prdData.cname" value="{{select}}">
+        <option>Select Category</option>
+        <option *ngFor="let c of category"  >{{c.CatName}}</option>
+        </select><br><br>
+        Price:<input type="number" [(ngModel)]="prdData.price" value="{{formdata.Price}}" name="price"/> <br><br>
+        Qnty:<input type="number" [(ngModel)]="prdData.qtny" value="{{formdata.Qnty}}" name="qtny"/> <br><br>
+        <!-- Image:<input type="file" [(ngModel)]="prdData.image" name="image" (change)="onFileSelect($event)"/> <br><br> -->
+        </div>
+        <input type="submit" value="Insert">
+    </form><br><br>
+</body>
+</html>

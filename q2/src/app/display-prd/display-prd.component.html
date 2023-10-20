@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <h1>Products</h1>
+    
+
+    <table>
+      <tr>
+        <th>ProductName</th>
+        <th>CategoryName</th>
+        <th>Price</th>
+        
+        <!-- Add more table headers as needed -->
+      </tr>
+      <tr *ngFor="let item of data">
+        <td>{{ item.PrdName }}</td>
+        <td>{{ item.Category }}</td>
+        <td>{{ item.Price }}</td>
+        <!-- <td>{{ item.Qnty }}</td> -->
+        <td><img src="../../assets/public/imgs/{{item.Photo}}" height="50px" width="50px"></td>
+        
+        <!-- <td>{{ item.pname }}</td> -->
+        <!-- Display other data fields as needed -->
+      </tr>
+    </table>
+   
+
+  </body>
+</html>
+
